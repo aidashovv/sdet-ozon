@@ -40,3 +40,9 @@ migrate-action:
 		-path /migrations \
 		-database postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?sslmode=disable \
 		"$(action)"
+
+cbr-service-run:
+	@go mod tidy && go run cmd/cbr-service/main.go
+
+cbr-service-deploy:
+	@docker compose up -d --build
