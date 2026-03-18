@@ -2,6 +2,7 @@ CREATE SCHEMA sdetozon;
 
 CREATE TABLE sdetozon.mock_scenarios (
     test_id     VARCHAR(255) PRIMARY KEY,
+    version     INTEGER DEFAULT 1,
     status_code INTEGER NOT NULL
 );
 
